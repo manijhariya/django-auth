@@ -46,7 +46,7 @@ def signup(request):
 def verify_signup(request):
         username = request.POST.get("username")
         email = request.POST.get("email")
-	if not username or not email:
+        if not username or not email:
                 template = "custom_user/signup.html"
                 data = {"Error" : "Username and email id can't be empty"}
                 context = {'d' : data}
