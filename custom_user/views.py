@@ -91,4 +91,3 @@ def home(request):
         data = {"username" : user_data.username , "email" : user_data.email , "address" : user_data.address}
         context = {'d': data}
         return render(request,template,context)
-

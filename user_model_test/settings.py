@@ -133,4 +133,4 @@ AUTH_USER_MODEL = 'custom_user.CustomUser'
 AUTHENTICATION_BACKENDS = ['custom_user.backend.CustomUserBackend','django.contrib.auth.backends.ModelBackend']
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-SESSION_COOKIE_AGE = 5 * 60 
+SESSION_COOKIE_AGE = 5 * 60

@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
 	path('admin/', admin.site.urls),
 	path('', include('custom_user.urls')),
 	path('custom_user/', include('custom_user.urls')),
-        #path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
-        #path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ]
+
