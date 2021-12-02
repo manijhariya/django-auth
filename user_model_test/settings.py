@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-10tp$_=(5+$y3&3xa=e&zlj_mt#s0g55d(=59hp!iv%p^r6uyb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'django-auth-nemesis.herokuapp.com']
+ALLOWED_HOSTS = ['*'] #, 'django-auth-nemesis.herokuapp.com']
 
 
 # Application definition
