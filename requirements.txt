@@ -9,7 +9,7 @@ alembic==1.7.5
 aniso8601==9.0.1
 anyio==3.0.1
 appdirs==1.4.4
-APScheduler==0.0.0
+APScheduler==3.8.1
 argcomplete==1.12.3
 argon2-cffi==20.1.0
 artifacts==20211012
