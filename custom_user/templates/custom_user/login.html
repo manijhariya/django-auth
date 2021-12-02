@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+<title>Login</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<style>
+.container{
+    box-shadow:0px 10px 10px green;
+    margin: 0 auto;
+    margin-top:5%;
+    margin-left : 10%;
+}
+input, select{
+    background-color:black;
+    border:1px solid green;
+    color:white;
+    padding:5px;
+}
+form {
+    margin-left : 10rem;
+}
+input:hover{
+    box-shadow:5px 2px 2px green;
+}
+body {
+    padding-top: 1em;
+}
+label, input {
+    display: flex;
+    margin-bottom : 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: right;
+  width: 500px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+input {
+  flex: 0 0 200px;
+  margin-left: 10px;
+  width : 300px;
+}
+a:hover {
+  text-decoration: none;
+}
+
+
+
+</style> 
+<body style="background-color:black;color:white">
+<div class="container" style="border:2px solid green;padding:5%;text-align:center;">
+<h1>LogIn <span style="background-color:green;padding:10px;color:white;border-radius:5px">Here</span></h1>
+        <form action="{% url 'custom_user:login-verify' %}" method="post" style="margin-top:40px"><br>
+	{% csrf_token %}
+	<label> Username/Email:: 
+		<input type="text" placeholder="Your Username" name="email" required/>
+	</label>
+	<label> Password :: 
+		<input type="password" placeholder="Your Passwrod" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+	</label>
+	<br><br>
+	{% if d %} 
+        <div class="alert alert-danger">
+          <strong>{{ d.Error }}</strong>
+        </div>
+	{% endif %}
+	<label>
+	<a href="{% url 'custom_user:signup' %}"><input type="button" value="Sign Up" style="font-size:20px;padding:10px;width:90%">  </a>
+	<input type="submit" value="Log In" style="font-size:20px;padding:10px;width:50%">
+        </label>
+        </form>
+</div>
+</body>
+</html>

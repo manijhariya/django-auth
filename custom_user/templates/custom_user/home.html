@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+<title>Home</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<style>
+.container{
+    box-shadow:0px 10px 10px green;
+    margin: 0 auto;
+    margin-top:5%;
+    margin-left : 10%;
+}
+input, select{
+    background-color:black;
+    border:1px solid green;
+    color:white;
+    padding:5px;
+}
+form {
+    margin-left : 10rem;
+}
+input:hover{
+    box-shadow:5px 2px 2px green;
+}
+body {
+    padding-top: 1em;
+}
+select {
+    margin-left : 10px;
+}
+
+label, input {
+    display: flex;
+    margin-bottom : 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: right;
+  width: 500px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+input, p {
+  flex: 0 0 200px;
+  margin-left: 10px;
+  width : 300px;
+}
+.button {
+  height: 5rem;
+  flex: 0 0 200px;
+  margin-left: 10px;
+}
+a:hover {
+  text-decoration : none;
+}
+td,th {
+    font-size : 20px;
+}
+
+
+</style> 
+<body style="background-color:black;color:white">
+  <div class="container" style="border:2px solid green;padding:5%;text-align:center;">
+    <h1>User <span style="background-color:green;padding:10px;color:white;border-radius:5px">Details</span></h1>
+    <br><br>
+
+    <table>
+      <tr>
+        <th>Field </th>
+        <th>Values</th>
+      <tr>
+      <tr>
+	<td> Username </td>
+        <td>{{ d.username  }}</td>
+      <tr>
+      <tr>
+	<td> Email </td>
+        <td>{{ d.email }}</td>
+      <tr>
+      <tr>
+	<td> Address </td>
+	<td>{{ d.address }} </td>
+      </tr>
+    </table>
+    
+    <br>
+    <br>
+    <label>
+    <a href="{% url 'custom_user:logout' %}"><input type="button" value="Log Out" style="font-size:20px;padding:10px;width:90%">  </a>
+    <a href="{% url 'custom_user:delete' %}"><input type="button" value="Delete User" style="font-size:20px;padding:10px;width:90%">  </a>
+    </label>
+    
+</div>
+</body>
+</html>
